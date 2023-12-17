@@ -1,0 +1,17 @@
+meta {
+  name: Submit Star
+  type: http
+  seq: 3
+}
+
+post {
+  url: {{host}}/requestValidation
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "address": "msJwqrLSf6ZUpXagX8VTFpkR1VtovxBu1X"
+  }
+}
