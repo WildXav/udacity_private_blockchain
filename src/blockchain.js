@@ -65,12 +65,17 @@ class Blockchain {
     _addBlock(block) {
         const self = this;
         return new Promise(async (resolve, reject) => {
+            const chainErrors = await this.validateChain()
+            if (chainErrors.length) {
+                return reject('Chain is not valid! Unable to add new block')
+            }
+
             try {
                 const newHeight = self.height + 1
                 block.previousBlockHash = newHeight ? self.chain[newHeight - 1].hash : null
                 block.height = newHeight
                 block.time = dayjs().unix()
-                block.hash = SHA256(JSON.stringify(block))
+                block.hash = `${SHA256(JSON.stringify(block))}`
 
                 self.chain.push(block)
                 self.height = newHeight

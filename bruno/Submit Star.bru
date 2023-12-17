@@ -5,13 +5,20 @@ meta {
 }
 
 post {
-  url: {{host}}/requestValidation
+  url: {{host}}/submitStar
   body: json
   auth: none
 }
 
 body:json {
   {
-    "address": "msJwqrLSf6ZUpXagX8VTFpkR1VtovxBu1X"
+    "address": "msJwqrLSf6ZUpXagX8VTFpkR1VtovxBu1X",
+    "signature": "H+OD5PDs+Qy3A40RXCqjuqlBe7VAm86Cu0Hmdfr+7spwe/OzzQRIB1YgQMHx/Zhlc97MgwZHrytWtL99RMvHN8Y=",
+    "message": "msJwqrLSf6ZUpXagX8VTFpkR1VtovxBu1X:1702829683:starRegistry",
+    "star": {
+      "dec": "+46°01'20.4\"",
+      "ra": "05h 18m29.2s",
+      "story": "Capella"
+    }
   }
 }
